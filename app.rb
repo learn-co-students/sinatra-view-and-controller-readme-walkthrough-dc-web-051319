@@ -6,11 +6,13 @@ class App < Sinatra::Base
   end
 
   post '/reverse' do
+    original_string = params["string"]
+    @reversed_string = original_string.reverse
     erb :reversed
   end
 
   get '/friends' do
-    # Write your code here!
-
+    @friends = ["Emily Wildling Davison", "Harriet Tubman", "Joan of Arc", "Malala Yousafzai", "Sojourner of Truth"]
+    erb :friends
   end
 end
